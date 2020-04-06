@@ -1,2 +1,2 @@
-# Beam - Ringtone editor
+# Beam - Ringtone Editor
 Ringtone Editor
