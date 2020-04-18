@@ -2,6 +2,7 @@
     <string name="app_name">Beam</string>
     <string name="image_more_description">Image More</string>
     <string name="image_sound_description">Image Sound</string>
+    <string name="image_star_description">Image Star</string>
     <string name="sound_file_title">Sound 1</string>
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Ringtone Editor</string>
@@ -18,7 +19,7 @@
     <string name="save_button">Save</string>
     <string name="sound_quality_option">Sound Quality</string>
     <string name="audio_format_option">Audio Format</string>
-    <string name="estract_time_option">Extract Time</string>
+    <string name="extract_time_option">Extract Time</string>
     <string name="storage_path_option">Sotrage Path</string>
     <string name="hd_option">HD</string>
     <string name="highquality_option">Highquality</string>
@@ -45,5 +46,8 @@
     <string name="assing_contact_option">Assing to a contact</string>
     <string name="delete_song_option">Delete song</string>
     <string name="share_song_with_friends_option">Share this song with friends</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
