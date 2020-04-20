@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Beam</string>
+    <string name="image_more_description">Bild mehr</string>
+    <string name="image_sound_description">Bild Ton</string>
+    <string name="image_star_description">Bild Stern</string>
+    <string name="sound_file_title">Ton 1</string>
+    <string name="sound_file_weight">0.9 MB</string>
+    <string name="beam_editor_description">Klingelton-Editor</string>
+    <string name="make_your_extract">Machen Sie Ihren Soundextrakt</string>
+    <string name="set_ringtone">Klingelton einstellen</string>
+    <string name="my_library">Meine Bibliothek</string>
+    <string name="audio_settings">Audio Einstellungen</string>
+    <string name="play_all_button">Alle wiedergeben</string>
+    <string name="search_text">Suche...</string>
+    <string name="select_your_sound_title">Wählen Sie Ihren Sound</string>
+    <string name="internal_memory_button">Interner Speicher</string>
+    <string name="sd_card_button">SD-Karte</string>
+    <string name="folder_button">Mappe</string>
+    <string name="save_button">sparen</string>
+    <string name="sound_quality_option">Tonqualität</string>
+    <string name="audio_format_option">Audio Format</string>
+    <string name="extract_time_option">Zeit extrahieren</string>
+    <string name="storage_path_option">Speicherpfad</string>
+    <string name="hd_option">HD</string>
+    <string name="highquality_option">Hohe Qualität</string>
+    <string name="medium_option">Mittel</string>
+    <string name="low_quality_option">Geringe Qualität</string>
+    <string name="mp3_format_option">Mp3</string>
+    <string name="wav_format_option">Wav</string>
+    <string name="device_memory_option">Gerätespeicher</string>
+    <string name="sd_card_option">SD-Karte</string>
+    <string name="settings">die Einstellungen</string>
+    <string name="rate_app_option">Bewertungs App</string>
+    <string name="share_the_app_option">Teile die App mit Freunden</string>
+    <string name="update_to_latest_version_option">Update auf die neueste Version</string>
+    <string name="privacy_policy_option">Datenschutz-Bestimmungen</string>
+    <string name="app_version_option">App Version</string>
+    <string name="clear_cache_option">Cache leeren</string>
+    <string name="rate_app_description">Lassen Sie uns wissen, wie sehr Ihnen unsere App gefällt</string>
+    <string name="rate_our_app_button">Bewerten Sie unsere App jetzt</string>
+    <string name="do_it_later_button">Mach es später</string>
+    <string name="song_name_title">Song Titel</string>
+    <string name="play_song_option">Lied abspielen</string>
+    <string name="default_ringtone_option">Als Standardklingelton setzen</string>
+    <string name="default_alarm_option">Als Standardalarm festlegen</string>
+    <string name="assing_contact_option">Einem Kontakt zuweisen</string>
+    <string name="delete_song_option">Lied löschen</string>
+    <string name="share_song_with_friends_option">Teile dieses Lied mit Freunden</string>
+</resources>

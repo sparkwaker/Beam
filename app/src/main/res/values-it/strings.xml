@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Beam</string>
+    <string name="image_more_description">Immagine Altro</string>
+    <string name="image_sound_description">immagine del suono</string>
+    <string name="image_star_description">Stella d'immagine</string>
+    <string name="sound_file_title">Suono 1</string>
+    <string name="sound_file_weight">0.9 MB</string>
+    <string name="beam_editor_description">Editor suonerie</string>
+    <string name="make_your_extract">Fai il tuo estratto</string>
+    <string name="set_ringtone">Imposta suoneria</string>
+    <string name="my_library">La mia biblioteca</string>
+    <string name="audio_settings">Impostazioni audio</string>
+    <string name="play_all_button">Giocare tutto</string>
+    <string name="search_text">Ricerca...</string>
+    <string name="select_your_sound_title">Seleziona il tuo suono</string>
+    <string name="internal_memory_button">Memoria interna</string>
+    <string name="sd_card_button">Scheda SD</string>
+    <string name="folder_button">Cartella</string>
+    <string name="save_button">Salva</string>
+    <string name="sound_quality_option">Qualità del suono</string>
+    <string name="audio_format_option">Formato audio</string>
+    <string name="extract_time_option">Tempo di estrazione</string>
+    <string name="storage_path_option">Sotrage Path</string>
+    <string name="hd_option">HD</string>
+    <string name="highquality_option">Alta qualità</string>
+    <string name="medium_option">Medio</string>
+    <string name="low_quality_option">Di bassa qualità</string>
+    <string name="mp3_format_option">Mp3</string>
+    <string name="wav_format_option">Wav</string>
+    <string name="device_memory_option">Memoria del dispositivo</string>
+    <string name="sd_card_option">Scheda SD</string>
+    <string name="settings">impostazioni</string>
+    <string name="rate_app_option">Valuta l'app</string>
+    <string name="share_the_app_option">Condividi l'app con gli amici</string>
+    <string name="update_to_latest_version_option">aggiornare all'ultima versione</string>
+    <string name="privacy_policy_option">politica sulla riservatezza</string>
+    <string name="app_version_option">Versione dell'app</string>
+    <string name="clear_cache_option">Cancella cache</string>
+    <string name="rate_app_description">Facci sapere quanto ti piace la nostra app</string>
+    <string name="rate_our_app_button">Valuta la nostra app ora</string>
+    <string name="do_it_later_button">Fallo più tardi</string>
+    <string name="song_name_title">Nome della canzone</string>
+    <string name="play_song_option">Ascolta la canzone</string>
+    <string name="default_ringtone_option">Imposta come suoneria predefinita</string>
+    <string name="default_alarm_option">Imposta come allarme predefinito</string>
+    <string name="assing_contact_option">Assegna a un contatto</string>
+    <string name="delete_song_option">Elimina canzone</string>
+    <string name="share_song_with_friends_option">Condividi questa canzone con gli amici</string>
+</resources>

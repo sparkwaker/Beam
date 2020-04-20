@@ -1,2 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Beam</string>
+    <string name="image_more_description">Изображение Больше</string>
+    <string name="image_sound_description">Звук изображения</string>
+    <string name="image_star_description">Изображение Звезда</string>
+    <string name="sound_file_title">Звук 1</string>
+    <string name="sound_file_weight">0.9 MB</string>
+    <string name="beam_editor_description">Редактор рингтонов</string>
+    <string name="make_your_extract">Сделай свой экстракт</string>
+    <string name="set_ringtone">Установить рингтон</string>
+    <string name="my_library">Моя библиотека</string>
+    <string name="audio_settings">Настройки звука</string>
+    <string name="play_all_button">Играть все</string>
+    <string name="search_text">Поиск...</string>
+    <string name="select_your_sound_title">Выберите свой звук</string>
+    <string name="internal_memory_button">Внутренняя память</string>
+    <string name="sd_card_button">SD Card</string>
+    <string name="folder_button">папка</string>
+    <string name="save_button">Сохранить</string>
+    <string name="sound_quality_option">Качество звука</string>
+    <string name="audio_format_option">Аудио формат</string>
+    <string name="extract_time_option">Время извлечения</string>
+    <string name="storage_path_option">Путь хранения</string>
+    <string name="hd_option">HD</string>
+    <string name="highquality_option">Высокого качества</string>
+    <string name="medium_option">Средняя</string>
+    <string name="low_quality_option">Низкое качество</string>
+    <string name="mp3_format_option">Mp3</string>
+    <string name="wav_format_option">Wav</string>
+    <string name="device_memory_option">Память устройства</string>
+    <string name="sd_card_option">Sd Card</string>
+    <string name="settings">настройки</string>
+    <string name="rate_app_option">Оценить приложение</string>
+    <string name="share_the_app_option">Поделитесь приложением с друзьями</string>
+    <string name="update_to_latest_version_option">Обновить до последней версии</string>
+    <string name="privacy_policy_option">политика конфиденциальности</string>
+    <string name="app_version_option">Версия приложения</string>
+    <string name="clear_cache_option">Очистить кэш</string>
+    <string name="rate_app_description">Дайте нам знать, насколько вам нравится наше приложение</string>
+    <string name="rate_our_app_button">Оцените наше приложение сейчас</string>
+    <string name="do_it_later_button">Сделай это позже</string>
+    <string name="song_name_title">Название песни</string>
+    <string name="play_song_option">Играть песню</string>
+    <string name="default_ringtone_option">Установить в качестве мелодии по умолчанию</string>
+    <string name="default_alarm_option">Установить по умолчанию</string>
+    <string name="assing_contact_option">Назначить контакту</string>
+    <string name="delete_song_option">Удалить песню</string>
+    <string name="share_song_with_friends_option">Поделитесь этой песней с друзьями</string>
+</resources>
