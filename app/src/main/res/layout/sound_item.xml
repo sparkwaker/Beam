@@ -5,13 +5,14 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="1dp"
         app:cardBackgroundColor="@color/colorDarkGray"
         android:focusable="true"
-        app:cardElevation="3dp">
+        android:clickable="true"
+        app:cardElevation="5dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,10 +20,11 @@
             android:padding="5dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@drawable/ic_sound"
-                android:id="@+id/image_sound"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_sound_playing"
+                android:id="@+id/image_sound1"
+                android:layout_marginEnd="10dp"
                 android:layout_alignParentStart="true"
                 android:contentDescription="@string/image_sound_description">
             </ImageView>
@@ -32,9 +34,9 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginStart="10dp"
-                android:layout_toEndOf="@id/image_sound"
+                android:layout_toEndOf="@id/image_sound1"
                 android:gravity="center"
-                android:layout_toStartOf="@id/image_more">
+                android:layout_toStartOf="@id/linearLayout">
 
                 <TextView
                     android:layout_width="match_parent"
@@ -52,17 +54,26 @@
 
             </LinearLayout>
 
-            <ImageView
+            <LinearLayout
+                android:id="@+id/linearLayout"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_more"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/image_more"
-                android:contentDescription="@string/image_more_description">
-            </ImageView>
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_more"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    app:icon="@drawable/ic_more"
+                    app:iconGravity="textStart"
+                    app:iconPadding="0dp"
+                    app:iconTint="@color/colorWhite" />
+
+            </LinearLayout>
 
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
-
+    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

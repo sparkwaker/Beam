@@ -3,7 +3,7 @@
     <string name="app_name">Beam</string>
     <string name="image_more_description">Immagine Altro</string>
     <string name="image_sound_description">immagine del suono</string>
-    <string name="image_star_description">Stella d'immagine</string>
+    <string name="image_star_description">Stella d\'immagine</string>
     <string name="sound_file_title">Suono 1</string>
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Editor suonerie</string>
@@ -31,11 +31,11 @@
     <string name="device_memory_option">Memoria del dispositivo</string>
     <string name="sd_card_option">Scheda SD</string>
     <string name="settings">impostazioni</string>
-    <string name="rate_app_option">Valuta l'app</string>
-    <string name="share_the_app_option">Condividi l'app con gli amici</string>
-    <string name="update_to_latest_version_option">aggiornare all'ultima versione</string>
+    <string name="rate_app_option">Valuta l\'app</string>
+    <string name="share_the_app_option">Condividi l\'app con gli amici</string>
+    <string name="update_to_latest_version_option">aggiornare all\'ultima versione</string>
     <string name="privacy_policy_option">politica sulla riservatezza</string>
-    <string name="app_version_option">Versione dell'app</string>
+    <string name="app_version_option">Versione dell\'app</string>
     <string name="clear_cache_option">Cancella cache</string>
     <string name="rate_app_description">Facci sapere quanto ti piace la nostra app</string>
     <string name="rate_our_app_button">Valuta la nostra app ora</string>

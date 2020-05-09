@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.MaterialToolbar
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:title="@string/select_your_sound_title"
+    app:menu="@menu/menu_toolbar_my_library"
+    app:navigationIcon="@drawable/ic_arrow_back"/>
+
+

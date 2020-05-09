@@ -1,20 +1,10 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="text_size_xs">12sp</dimen>
-    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
     <dimen name="text_size_regular">16sp</dimen>
     <dimen name="text_size_medium">18sp</dimen>
-    <dimen name="text_size_large">19sp</dimen>
+    <dimen name="text_size_large">20sp</dimen>
     <dimen name="text_size_mid_large">22sp</dimen>
-    <dimen name="text_size_xl">25sp</dimen>
-
-    <dimen name="text_size_of_page_titles">20sp</dimen>
-    <dimen name="text_size_of_paragraph_titles">18sp</dimen>
-    <dimen name="text_size_of_paragraph_text">14sp</dimen>
-    <dimen name="text_size_of_list_titles">14sp</dimen>
-    <dimen name="text_size_of_list_item_titles">16sp</dimen>
-    <dimen name="text_size_of_secondary_text">14sp</dimen>
-    <dimen name="text_size_of_buttons_tabs">14sp</dimen>
-    <dimen name="text_size_of_text_inputs">16sp</dimen>
-
+    <dimen name="text_size_xl">24sp</dimen>
 </resources>

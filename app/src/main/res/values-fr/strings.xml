@@ -20,7 +20,7 @@
     <string name="save_button">sauvegarder</string>
     <string name="sound_quality_option">Qualité sonore</string>
     <string name="audio_format_option">Format audio</string>
-    <string name="extract_time_option">Temps d'extraction</string>
+    <string name="extract_time_option">Temps d\'extraction</string>
     <string name="storage_path_option">Chemin de Sotrage</string>
     <string name="hd_option">haute définition</string>
     <string name="highquality_option">Haute qualité</string>
@@ -28,14 +28,14 @@
     <string name="low_quality_option">Basse qualité</string>
     <string name="mp3_format_option">Mp3</string>
     <string name="wav_format_option">Wav</string>
-    <string name="device_memory_option">Mémoire de l'appareil</string>
+    <string name="device_memory_option">Mémoire de l\'appareil</string>
     <string name="sd_card_option">Carte SD</string>
     <string name="settings">Réglages</string>
     <string name="rate_app_option">Application de taux</string>
-    <string name="share_the_app_option">Partager l'application avec des amis</string>
+    <string name="share_the_app_option">Partager l\'application avec des amis</string>
     <string name="update_to_latest_version_option">Mise à jour vers la dernière version</string>
     <string name="privacy_policy_option">Politique de confidentialité</string>
-    <string name="app_version_option">Version de l'application</string>
+    <string name="app_version_option">Version de l\'application</string>
     <string name="clear_cache_option">Vider le cache</string>
     <string name="rate_app_description">Dites-nous combien vous aimez notre application</string>
     <string name="rate_our_app_button">Évaluez notre appli maintenant</string>
