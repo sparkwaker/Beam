@@ -2,76 +2,47 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="@color/colorBackground"
-    android:padding="10dp">
-
-    <Button
-        android:id="@+id/btn_close"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        app:icon="@android:drawable/ic_menu_close_clear_cancel"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:iconTint="@color/colorWhite"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:padding="15dp">
 
     <ImageView
         android:id="@+id/image_star"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/ic_star"
+        android:layout_width="115dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="35dp"
+        android:contentDescription="@string/image_star_description"
+        android:src="@drawable/ic_social_media"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_close"
-        android:contentDescription="@string/image_star_description">
+        app:layout_constraintTop_toTopOf="parent">
 
     </ImageView>
-
-    <TextView
-        android:id="@+id/text_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="@string/rate_app_option"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_star">
-    </TextView>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:gravity="center"
+
         android:text="@string/rate_app_description"
         android:textSize="@dimen/text_size_regular"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_title"
-        app:layout_constraintVertical_bias="0.079">
-    </TextView>
+        app:layout_constraintTop_toBottomOf="@+id/image_star" />
 
     <androidx.appcompat.widget.AppCompatRatingBar
         android:id="@+id/rating_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:numStars="5"
         android:progressTint="@color/colorYellow"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/btn_rate_app"
@@ -81,7 +52,7 @@
         android:backgroundTint="@color/colorGreen"
         android:text="@string/rate_our_app_button"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/text_size_small"
+        android:textSize="@dimen/text_size_xs"
         app:cornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +69,7 @@
         android:backgroundTint="@color/colorRed"
         android:text="@string/do_it_later_button"
         android:textColor="@color/colorWhite"
-        android:textSize="@dimen/text_size_small"
+        android:textSize="@dimen/text_size_xs"
         app:cornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

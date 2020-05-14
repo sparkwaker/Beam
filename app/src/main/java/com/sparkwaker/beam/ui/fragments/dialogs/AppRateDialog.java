@@ -12,7 +12,7 @@ public class AppRateDialog  extends DialogFragment {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Material_NoActionBar_Fullscreen);
+            setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Material_NoActionBar);
         }
 
         @Override

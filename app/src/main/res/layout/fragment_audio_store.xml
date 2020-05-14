@@ -13,7 +13,7 @@
 
         <include
             android:id="@+id/include_toolbar_audio_store"
-            layout="@layout/include_toolbar_audio_store"
+            layout="@layout/include_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent" />

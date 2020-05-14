@@ -8,20 +8,13 @@
     tools:context=".ui.fragments.HomeFragment"
     android:id="@+id/fragment_home">
 
-    <include
-        android:id="@+id/include_toolbar_home"
-        layout="@layout/include_toolbar_home"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"/>
-
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:orientation="vertical"
-        android:layout_below="@id/include_toolbar_home">
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
@@ -47,7 +40,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:layout_below="@id/linearLayout3">
 
         <LinearLayout
@@ -63,7 +56,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="145dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginEnd="10dp"
                     android:clickable="true"
@@ -79,16 +72,16 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:contentDescription="test"
-                            android:src="@drawable/ic_music_player" />
+                            android:src="@drawable/ic_cutter" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:text="@string/make_your_extract"
+                            android:text="Trim sound"
                             android:textAlignment="center"
                             android:textColor="@color/colorWhite"
                             android:textSize="@dimen/text_size_small" />
@@ -98,7 +91,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="145dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:clickable="true"
                     android:focusable="true"
@@ -113,8 +106,8 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_phone" />
 
@@ -142,7 +135,7 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="145dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginEnd="10dp"
                     android:clickable="true"
@@ -158,10 +151,10 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_sound_folder" />
+                            android:src="@drawable/ic_sound_folder2" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -178,7 +171,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="145dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:clickable="true"
                     android:focusable="true"
@@ -192,16 +185,16 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
                             android:layout_gravity="center_horizontal"
-                            android:src="@drawable/ic_equalizator" />
+                            android:src="@drawable/ic_settings2" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="15dp"
-                            android:text="@string/audio_settings"
+                            android:text="@string/settings"
                             android:textAlignment="center"
                             android:textColor="@color/colorWhite"
                             android:textSize="@dimen/text_size_small" />

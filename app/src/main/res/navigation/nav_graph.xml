@@ -76,5 +76,5 @@
         android:id="@+id/general_settings_fragment"
         android:name="com.sparkwaker.beam.ui.fragments.GeneralSettingsFragment"
         android:label="fragment_general_settings"
-        tools:layout="@layout/fragment_general_settings" />
+        tools:layout="@layout/fragment_settings" />
 </navigation>
