@@ -7,7 +7,7 @@
     <string name="sound_file_title">Son 1</string>
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Éditeur de sonnerie</string>
-    <string name="make_your_extract">Faites votre extrait</string>
+    <string name="trim_sound_option">Couper le son</string>
     <string name="set_ringtone">Mettre sonnerie</string>
     <string name="my_library">Ma bibliothèque</string>
     <string name="audio_settings">Les paramètres audio</string>

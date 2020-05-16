@@ -7,7 +7,7 @@
     <string name="sound_file_title">Ton 1</string>
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Klingelton-Editor</string>
-    <string name="make_your_extract">Machen Sie Ihren Soundextrakt</string>
+    <string name="trim_sound_option">Trimmton</string>
     <string name="set_ringtone">Klingelton einstellen</string>
     <string name="my_library">Meine Bibliothek</string>
     <string name="audio_settings">Audio Einstellungen</string>

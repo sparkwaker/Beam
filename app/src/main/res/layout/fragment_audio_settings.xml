@@ -5,13 +5,14 @@
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="66dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray">
 
             <ImageView
                 android:id="@+id/img_sound_quality"
@@ -29,7 +30,8 @@
                 android:layout_marginStart="3dp"
                 android:layout_marginEnd="7dp"
                 android:layout_toEndOf="@+id/img_sound_quality"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <TextView
                     android:id="@+id/txt_sound_quality"
@@ -46,15 +48,16 @@
 
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="66dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray">
 
             <ImageView
                 android:id="@+id/img_audio_format"
@@ -88,15 +91,16 @@
             </LinearLayout>
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="66dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray">
 
             <ImageView
                 android:id="@+id/img_extract_time"
@@ -128,7 +132,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="-"
-                    android:textColor="@color/colorWhite"/>
+                    android:textColor="@color/colorWhite" />
 
                 <EditText
                     android:id="@+id/extract_time_option"
@@ -138,27 +142,29 @@
                     android:ems="10"
                     android:inputType="time"
                     android:text="2:00" />
+
                 <Button
                     android:id="@+id/plus_button"
                     android:layout_width="18dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text="+"
-                    android:textColor="@color/colorWhite"/>
+                    android:textColor="@color/colorWhite" />
 
 
             </LinearLayout>
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="66dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/colorDarkGray">
 
             <ImageView
                 android:id="@+id/img_storage_path"
@@ -188,6 +194,6 @@
             </LinearLayout>
         </RelativeLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

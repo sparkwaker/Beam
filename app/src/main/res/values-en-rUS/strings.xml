@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Beam</string>
     <string name="image_more_description">Image More</string>
@@ -7,34 +8,34 @@
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Ringtone Editor</string>
     <string name="trim_sound_option">Trim sound</string>
-    <string name="set_ringtone">Set Ringtone</string>
-    <string name="my_library">My Library</string>
-    <string name="audio_settings">Audio Settings</string>
-    <string name="play_all_button">Play All</string>
+    <string name="set_ringtone">Set ringtone</string>
+    <string name="my_library">My library</string>
+    <string name="audio_settings">Audio settings</string>
+    <string name="play_all_button">Play all</string>
     <string name="search_text">Search...</string>
-    <string name="select_your_sound_title">Select Your Sound</string>
-    <string name="internal_memory_button">Internal Memory</string>
+    <string name="select_your_sound_title">Select your sound</string>
+    <string name="internal_memory_button">Internal memory</string>
     <string name="sd_card_button">SD Card</string>
     <string name="folder_button">Folder</string>
     <string name="save_button">Save</string>
-    <string name="sound_quality_option">Sound Quality</string>
-    <string name="audio_format_option">Audio Format</string>
-    <string name="extract_time_option">Extract Time</string>
-    <string name="storage_path_option">Sotrage Path</string>
+    <string name="sound_quality_option">Sound quality</string>
+    <string name="audio_format_option">Audio format</string>
+    <string name="extract_time_option">Extract time</string>
+    <string name="storage_path_option">Sotrage path</string>
     <string name="hd_option">HD</string>
     <string name="highquality_option">Highquality</string>
     <string name="medium_option">Medium</string>
-    <string name="low_quality_option">Low Quality</string>
+    <string name="low_quality_option">Low quality</string>
     <string name="mp3_format_option">Mp3</string>
     <string name="wav_format_option">Wav</string>
-    <string name="device_memory_option">Device Memory</string>
+    <string name="device_memory_option">Device memory</string>
     <string name="sd_card_option">Sd Card</string>
     <string name="settings">Settings</string>
-    <string name="rate_app_option">Rate App</string>
-    <string name="share_the_app_option">Share the App with Friends</string>
-    <string name="update_to_latest_version_option">Update to Latest version</string>
-    <string name="privacy_policy_option">Privacy Policy</string>
-    <string name="app_version_option">App Version</string>
+    <string name="rate_app_option">Rate app</string>
+    <string name="share_the_app_option">Share the app with friends</string>
+    <string name="update_to_latest_version_option">Update to latest version</string>
+    <string name="privacy_policy_option">Privacy olicy</string>
+    <string name="app_version_option">App version</string>
     <string name="clear_cache_option">Clear Cache</string>
     <string name="rate_app_description">Let us know how much you like our app</string>
     <string name="rate_our_app_button">Rate our App Now</string>
@@ -46,6 +47,5 @@
     <string name="assing_contact_option">Assign to a contact</string>
     <string name="delete_song_option">Delete song</string>
     <string name="share_song_with_friends_option">Share this song with friends</string>
-
-
+    <string name="hello_blank_fragment">hello_blank_fragment</string>
 </resources>

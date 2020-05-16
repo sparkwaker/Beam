@@ -7,7 +7,7 @@
     <string name="sound_file_title">Som 1</string>
     <string name="sound_file_weight">0.9 MB</string>
     <string name="beam_editor_description">Editor de toque</string>
-    <string name="make_your_extract">Faça seu extrato</string>
+    <string name="trim_sound_option">cortar o som</string>
     <string name="set_ringtone">Ajustar toque</string>
     <string name="my_library">Minha biblioteca</string>
     <string name="audio_settings">Configurações de áudio</string>
