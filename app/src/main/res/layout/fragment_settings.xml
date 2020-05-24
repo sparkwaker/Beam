@@ -46,12 +46,12 @@
                         android:paddingRight="5dp"
                         android:focusable="true">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="10dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            app:srcCompat="@drawable/ic_rate_app_p" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -82,12 +82,12 @@
                         android:paddingRight="5dp"
                         android:focusable="true">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="10dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            app:srcCompat="@drawable/ic_share_app_y" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -118,12 +118,12 @@
                         android:paddingRight="5dp"
                         android:focusable="true">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:padding="10dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            app:srcCompat="@drawable/ic_update_version_b" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -154,12 +154,12 @@
                         android:paddingRight="5dp"
                         android:focusable="true">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/ic_app_version_g" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -189,12 +189,12 @@
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/ic_clear_cache_p" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -263,7 +263,7 @@
                             android:layout_width="45dp"
                             android:layout_height="45dp"
                             android:padding="10dp"
-                            android:src="@drawable/ic_sound_quality" />
+                            android:src="@drawable/ic_sound_quality_y" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -293,12 +293,12 @@
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/ic_audio_format_b" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -329,12 +329,12 @@
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
+                        <ImageView
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
                             android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_folder" />
+                            android:padding="10dp"
+                            app:srcCompat="@drawable/ic_extract_time_g" />
 
                         <TextView
                             android:layout_width="0dp"
