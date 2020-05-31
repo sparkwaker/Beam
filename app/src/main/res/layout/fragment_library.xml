@@ -34,7 +34,8 @@
                 android:layout_marginBottom="15dp" />
 
             <include
-                layout="@layout/sound_item"
+                layout="@layout/include_recycler_view"
+                android:id="@+id/rcSounds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

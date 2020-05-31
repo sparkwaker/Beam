@@ -19,6 +19,9 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/mobile_navigation" />
+        <action
+            android:id="@+id/action_splash_fragment_to_library_fragment"
+            app:destination="@id/library_fragment" />
 
     </fragment>
 

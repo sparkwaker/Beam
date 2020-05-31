@@ -25,7 +25,7 @@ public class SplashFragment extends Fragment {
         requireActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         new Handler().postDelayed(() -> {
-            findNavController(this).navigate(R.id.navigate_to_home);
+            findNavController(this).navigate(R.id.action_splash_fragment_to_library_fragment);
         }, 1000);
     }
 }
