@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -29,16 +30,20 @@ public class AudioLibraryViewModel extends AndroidViewModel {
 
     public void loadSounds(){
 
-       new LoadSoundsTask(new AudioStore(), sounds -> {
-            mSounds.setValue(sounds);
-       }).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+        mSounds.setValue(new AudioStore().querySounds());
 
-       if (observerWrapper == null) {
+    /*   LoadSoundsTask soundTask = new LoadSoundsTask(new AudioStore(), sounds -> {
+          mSounds.setValue(sounds);
+       });*/
+
+     //  soundTask.execute();
+
+      /* if (observerWrapper == null) {
            observerWrapper = new ObserverWrapper(getApplication(), MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
                 selfChange -> {
                 loadSounds();
             });
-       }
+       }*/
 
     }
 

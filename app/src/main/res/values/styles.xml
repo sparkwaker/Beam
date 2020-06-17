@@ -17,7 +17,6 @@
         <item name="titleTextAppearance">@style/TextAppearance.MaterialComponents.Body1</item>
     </style>
 
-
     <style name="BaseTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
     <style name="BaseTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" />
 

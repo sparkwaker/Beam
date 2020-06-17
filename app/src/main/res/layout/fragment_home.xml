@@ -56,8 +56,8 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:layout_height="120dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
                     android:layout_marginEnd="10dp"
                     android:clickable="true"
                     android:focusable="true"
@@ -72,8 +72,8 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:contentDescription="test"
                             android:src="@drawable/ic_cutter" />
 
@@ -91,8 +91,8 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:layout_height="120dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
@@ -106,8 +106,8 @@
                         tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_phone" />
 
@@ -135,13 +135,14 @@
                 android:orientation="horizontal">
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:layout_height="120dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
                     android:layout_marginEnd="10dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="15dp"
+                    android:id="@+id/cardVMyLibrary">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -149,10 +150,9 @@
                         android:gravity="center"
                         android:orientation="vertical"
                         tools:ignore="UseCompoundDrawables">
-
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_sound_folder2" />
 
@@ -171,8 +171,8 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:layout_width="150dp"
-                    android:layout_height="120dp"
+                    android:layout_width="155dp"
+                    android:layout_height="125dp"
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
@@ -185,8 +185,8 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp"
                             android:layout_gravity="center_horizontal"
                             android:src="@drawable/ic_settings2" />
 

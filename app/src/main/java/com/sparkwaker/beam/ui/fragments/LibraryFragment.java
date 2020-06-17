@@ -70,6 +70,12 @@ public class LibraryFragment extends Fragment {
 
 
     @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAudioLibraryViewModel = new ViewModelProvider(requireActivity()).get(AudioLibraryViewModel.class);
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_library, container, false);
     }
@@ -89,24 +95,22 @@ public class LibraryFragment extends Fragment {
     private void configUI(){
 
         mRcSounds = mView.findViewById(R.id.rcSounds);
-        mAudioLibraryViewModel = new ViewModelProvider(requireActivity()).get(AudioLibraryViewModel.class);
         mAudioLibraryViewModel.loadSounds();
-
         mLibraryAdapter = new AudioGalleryAdapter(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(),((MediaStoreAudio)v.getTag()).getTitle(),Toast.LENGTH_LONG).show();
             }
         });
-        mAudioLibraryViewModel.getSounds().observe(getViewLifecycleOwner(), (Observer<? super List<MediaStoreAudio>>) v -> {
-             Toast.makeText(getContext(),"Hay nuevos sonidos en la lista",Toast.LENGTH_LONG).show();
-             mLibraryAdapter.submitList(v);
+        mAudioLibraryViewModel.getSounds().observe(getViewLifecycleOwner(), sounds -> {
+            Toast.makeText(getContext(),"Hay nuevos sonidos en la lista",Toast.LENGTH_LONG).show();
+            mLibraryAdapter.submitList(sounds);
         });
 
         mRcSounds.setAdapter(mLibraryAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mRcSounds.setLayoutManager(layoutManager);
-        mRcSounds.setHasFixedSize(true);
+     //   mRcSounds.setHasFixedSize(true);
 
     }
 
