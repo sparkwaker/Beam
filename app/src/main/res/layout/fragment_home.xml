@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.HomeFragment"
-    android:id="@+id/fragment_home">
+    tools:context=".ui.fragments.HomeFragment">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
@@ -62,7 +61,8 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="15dp"
+                    android:id="@+id/cardTrimSound">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -96,7 +96,8 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="15dp"
+                    android:id="@+id/cardSetRingtone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -142,7 +143,7 @@
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
                     app:cardCornerRadius="15dp"
-                    android:id="@+id/cardVMyLibrary">
+                    android:id="@+id/cardMyLibrary">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -176,7 +177,8 @@
                     android:clickable="true"
                     android:focusable="true"
                     app:cardBackgroundColor="@color/colorDarkGray"
-                    app:cardCornerRadius="15dp">
+                    app:cardCornerRadius="15dp"
+                    android:id="@+id/cardSettings">
 
                     <LinearLayout
                         android:layout_width="match_parent"

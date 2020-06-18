@@ -4,72 +4,58 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
 import com.google.android.material.card.MaterialCardView;
 import com.sparkwaker.beam.R;
-import com.sparkwaker.beam.ui.fragments.dialogs.AppRateDialog;
-
-import java.util.Objects;
 
 import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 public class HomeFragment extends Fragment {
 
-    // private HomeViewModel homeViewModel;
-    private MaterialCardView mCardVMyLibrary;
+    private MaterialCardView mCardMyLibrary;
+    private MaterialCardView mCardTrimSound;
+    private MaterialCardView mCardSettings;
+    private MaterialCardView mCardSetRingtone;
 
-
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-
-
-        // homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        //final TextView textView = root.findViewById(R.id.text_home);
-        /* homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });*/
-
-        //showDialog();
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_home, container, false);
     }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        configUI(view);
+    }
 
-        mCardVMyLibrary = view.findViewById(R.id.cardVMyLibrary);
-        mCardVMyLibrary.setOnClickListener(v -> {
-            findNavController(this).navigate(R.id.navigate_to_library);
-        });
+    private void configUI(View view){
+
+        // Retrieve user interface controls
+        mCardTrimSound = view.findViewById(R.id.cardTrimSound);
+        mCardSetRingtone = view.findViewById(R.id.cardSetRingtone);
+        mCardMyLibrary = view.findViewById(R.id.cardMyLibrary);
+        mCardSettings = view.findViewById(R.id.cardSettings);
+
+        // Set listeners
+        mCardTrimSound.setOnClickListener(v -> Toast.makeText(requireContext(), "Trim sound option", Toast.LENGTH_SHORT).show());
+        mCardSetRingtone.setOnClickListener(v -> Toast.makeText(requireContext(), "Set ringtone option", Toast.LENGTH_SHORT).show());
+        mCardMyLibrary.setOnClickListener(v -> findNavController(this).navigate(R.id.navigate_to_library));
+        mCardSettings.setOnClickListener(v -> findNavController(this).navigate(R.id.navigate_to_settings));
 
     }
 
-    void showDialog() {
+   /* void showDialog() {
 
-        // DialogFragment.show() will take care of adding the fragment
-        // in a transaction.  We also want to remove any currently showing
-        // dialog, so make our own transaction and take care of that here.
         FragmentTransaction ft = requireActivity().getSupportFragmentManager().beginTransaction();
         Fragment prev = requireActivity().getSupportFragmentManager().findFragmentByTag("dialog");
         if (prev != null) {
             ft.remove(prev);
         }
         ft.addToBackStack(null);
-        // Create and show the dialog.
         DialogFragment newFragment = new AppRateDialog();
         newFragment.show(ft, "dialog");
-    }
+    }*/
 
 }

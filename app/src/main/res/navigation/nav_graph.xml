@@ -3,62 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/home_fragment"
+    app:startDestination="@id/homeFragment"
     tools:ignore="UnusedNavigation">
 
     <fragment
-        android:id="@+id/home_fragment"
+        android:id="@+id/homeFragment"
         android:name="com.sparkwaker.beam.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/navigate_to_library"
-            app:destination="@id/library_fragment" />
+            app:destination="@id/libraryFragment" />
         <action
-            android:id="@+id/navigate_to_audio_store"
-            app:destination="@id/audio_store_fragment" />
-        <action
-            android:id="@+id/navigate_to_audio_editor"
-            app:destination="@id/audio_editor_fragment" />
-        <action
-            android:id="@+id/navigate_to_general_settings"
-            app:destination="@id/general_settings_fragment" />
-        <action
-            android:id="@+id/navigate_to_ringtone_manager"
-            app:destination="@id/ringtone_mgr_fragment" />
-        <action
-            android:id="@+id/navigate_to_audio_settings"
-            app:destination="@id/audio_settings_fragment" />
+            android:id="@+id/navigate_to_settings"
+            app:destination="@id/settingsFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/library_fragment"
+        android:id="@+id/libraryFragment"
         android:name="com.sparkwaker.beam.ui.fragments.LibraryFragment"
         android:label="fragment_library"
         tools:layout="@layout/fragment_library" />
     <fragment
-        android:id="@+id/audio_store_fragment"
-        android:name="com.sparkwaker.beam.ui.fragments.AudioStoreFragment"
-        android:label="fragment_audio_store"
-        tools:layout="@layout/fragment_audio_store" />
-    <fragment
-        android:id="@+id/audio_editor_fragment"
-        android:name="com.sparkwaker.beam.ui.fragments.AudioEditorFragment"
-        android:label="fragment_audio_editor"
-        tools:layout="@layout/fragment_audio_editor" />
-    <fragment
-        android:id="@+id/audio_settings_fragment"
+        android:id="@+id/settingsFragment"
         android:name="com.sparkwaker.beam.ui.fragments.SettingsFragment"
-        android:label="fragment_audio_settings"
-        tools:layout="@layout/fragment_audio_settings" />
-    <fragment
-        android:id="@+id/ringtone_mgr_fragment"
-        android:name="com.sparkwaker.beam.ui.fragments.RingtoneMgrFragment"
-        android:label="fragment_ringtone_manager"
-        tools:layout="@layout/fragment_ringtone_manager" />
-    <fragment
-        android:id="@+id/general_settings_fragment"
-        android:name="com.sparkwaker.beam.ui.fragments.GeneralSettingsFragment"
-        android:label="fragment_general_settings"
+        android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>
