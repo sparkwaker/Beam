@@ -3,22 +3,25 @@ package com.sparkwaker.beam.ui.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import com.sparkwaker.beam.R;
-import com.sparkwaker.beam.models.MediaStoreAudio;
+import com.sparkwaker.beam.models.AudioContent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.ListAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class  AudioGalleryAdapter extends ListAdapter<MediaStoreAudio, AudioGalleryAdapter.ItemSoundViewHolder> {
+public class LibraryAdapter extends ListAdapter<AudioContent, LibraryAdapter.ItemSoundViewHolder> {
 
-    private View.OnClickListener mOnClickListener;
+    private SelectedAudioListener mSelectedAudioListener;
 
-    public AudioGalleryAdapter(View.OnClickListener onClickListener){
+    public interface SelectedAudioListener{
+        void onAudioSelected(AudioContent audioSelected);
+    }
+
+    public LibraryAdapter(SelectedAudioListener selectedAudioListener){
         super(DIFF_CALLBACK);
-        mOnClickListener = onClickListener;
+        mSelectedAudioListener = selectedAudioListener;
     }
 
     @NonNull
@@ -26,7 +29,7 @@ public class  AudioGalleryAdapter extends ListAdapter<MediaStoreAudio, AudioGall
     public ItemSoundViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.sound_item,parent, false);
-        return new ItemSoundViewHolder(view, mOnClickListener);
+        return new ItemSoundViewHolder(view, mSelectedAudioListener);
     }
 
     @Override
@@ -35,50 +38,48 @@ public class  AudioGalleryAdapter extends ListAdapter<MediaStoreAudio, AudioGall
         holder.onBind(getItem(position));
     }
 
-    private static final DiffUtil.ItemCallback<MediaStoreAudio> DIFF_CALLBACK =
+    private static final DiffUtil.ItemCallback<AudioContent> DIFF_CALLBACK =
 
-            new DiffUtil.ItemCallback<MediaStoreAudio>() {
+            new DiffUtil.ItemCallback<AudioContent>() {
                 @Override
-                public boolean areItemsTheSame(@NonNull MediaStoreAudio oldSound, @NonNull MediaStoreAudio newSound) {
+                public boolean areItemsTheSame(@NonNull AudioContent oldSound, @NonNull AudioContent newSound) {
                     return oldSound.getId() == newSound.getId();
                 }
                 @Override
-                public boolean areContentsTheSame(@NonNull MediaStoreAudio oldSound, @NonNull MediaStoreAudio newSound) {
+                public boolean areContentsTheSame(@NonNull AudioContent oldSound, @NonNull AudioContent newSound) {
                     return oldSound.equals(newSound);
                 }
             };
 
     static class ItemSoundViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private ImageView mImgSoundItem;
         private TextView mTxtTittle;
         private TextView mTxtSize;
         private View rootView;
-        private View.OnClickListener mOnClickListener;
+        private SelectedAudioListener mSelectedAudioListener;
 
         View getRootView() {
             return rootView;
         }
 
-        ItemSoundViewHolder(@NonNull View itemView, View.OnClickListener onClickListener) {
+        ItemSoundViewHolder(@NonNull View itemView, SelectedAudioListener selectedAudioListener) {
             super(itemView);
             rootView = itemView;
-            mImgSoundItem = itemView.findViewById(R.id.imgSoundItem);
             mTxtTittle = itemView.findViewById(R.id.txtSoundItemTitle);
             mTxtSize = itemView.findViewById(R.id.txtSoundItemSize);
             rootView.setOnClickListener(this);
-            mOnClickListener = onClickListener;
+            mSelectedAudioListener = selectedAudioListener;
         }
 
-        void onBind(MediaStoreAudio sound) {
+        void onBind(AudioContent sound) {
             mTxtTittle.setText(sound.getTitle());
             mTxtSize.setText(String.valueOf(sound.getSize()));
         }
 
         @Override
         public void onClick(View v) {
-            if (rootView.getTag() instanceof MediaStoreAudio)
-                 mOnClickListener.onClick(rootView);
+            if (rootView.getTag() instanceof AudioContent)
+                mSelectedAudioListener.onAudioSelected(((AudioContent)rootView.getTag()));
         }
     }
 }

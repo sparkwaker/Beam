@@ -1,12 +1,9 @@
 package com.sparkwaker.beam.models;
 
 import android.net.Uri;
-
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.DiffUtil;
 
-public class MediaStoreAudio {
+public class AudioContent {
 
     private long mId;
     private Uri mContentUri;
@@ -16,7 +13,7 @@ public class MediaStoreAudio {
     private String mDateModified;
 
 
-    public MediaStoreAudio(long id, Uri contentUri, String title, String size, String format, String dateModified) {
+    public AudioContent(long id, Uri contentUri, String title, String size, String format, String dateModified) {
         this.mId = id;
         this.mContentUri = contentUri;
         this.mTitle = title;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.LibraryFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -15,29 +15,43 @@
             layout="@layout/include_toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_alignParentTop="true" />
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/include_now_playing"
-            app:layout_constraintTop_toBottomOf="@+id/include_toolbar_my_library"
-            app:layout_constraintVertical_bias="0.025">
+            android:padding="5dp"
+            android:layout_below="@+id/include_toolbar_my_library"
+            android:layout_above="@+id/include_now_playing">
 
-            <include
-                layout="@layout/include_search"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginBottom="15dp" />
 
             <include
                 android:id="@+id/rcSounds"
                 layout="@layout/include_recycler_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/include_toolbar_my_library"
+            android:layout_above="@id/include_now_playing"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+
+            <ProgressBar
+                android:id="@+id/pBarLoading"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:indeterminate="true"
+                android:indeterminateTint="@color/colorPurple"/>
 
         </LinearLayout>
 
@@ -46,8 +60,8 @@
             layout="@layout/include_player"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            android:layout_alignParentBottom="true" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 
 </FrameLayout>

@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="70dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginBottom="1dp"
+    android:layout_marginBottom="3dp"
     app:cardBackgroundColor="@color/colorDarkGray"
     android:focusable="true"
     android:clickable="true"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    app:cardCornerRadius="10dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -17,8 +18,9 @@
             <ImageView
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_sound_playing"
+                android:src="@drawable/ic_bell_2"
                 android:id="@+id/imgSoundItem"
+                android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
@@ -57,6 +59,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button

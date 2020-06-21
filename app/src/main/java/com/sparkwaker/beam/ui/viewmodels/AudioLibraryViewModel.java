@@ -7,13 +7,13 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.os.Looper;
 import android.provider.MediaStore;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
-import com.sparkwaker.beam.models.MediaStoreAudio;
+import com.sparkwaker.beam.models.AudioContent;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 
 public class AudioLibraryViewModel extends AndroidViewModel {
 
-    private MutableLiveData<List<MediaStoreAudio>> mSounds = new MutableLiveData<>();
+    private MutableLiveData<List<AudioContent>> mSounds = new MutableLiveData<>();
     private ObserverWrapper observerWrapper = null;
 
     public AudioLibraryViewModel(@NonNull Application application) {
@@ -30,32 +30,31 @@ public class AudioLibraryViewModel extends AndroidViewModel {
 
     public void loadSounds(){
 
-        mSounds.setValue(new AudioStore().querySounds());
+         LoadSoundsTask soundTask = new LoadSoundsTask(new AudioStore(), sounds -> {
+             mSounds.postValue(sounds);
+         });
 
-    /*   LoadSoundsTask soundTask = new LoadSoundsTask(new AudioStore(), sounds -> {
-          mSounds.setValue(sounds);
-       });*/
+         soundTask.execute();
 
-     //  soundTask.execute();
-
-      /* if (observerWrapper == null) {
-           observerWrapper = new ObserverWrapper(getApplication(), MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,
-                selfChange -> {
-                loadSounds();
-            });
-       }*/
-
+         if (observerWrapper == null) {
+           observerWrapper = new ObserverWrapper(getApplication(), MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, new ObserverWrapper.changeListener() {
+               @Override
+               public void onChange(boolean selfChange, Uri uri) {
+                   loadSounds();
+               }
+           });
+         }
     }
 
-    public LiveData<List<MediaStoreAudio>> getSounds(){
+    public LiveData<List<AudioContent>> getSounds(){
         return mSounds;
     }
 
     public class AudioStore{
 
-        public List<MediaStoreAudio> querySounds() {
+        public List<AudioContent> querySounds() {
 
-            List<MediaStoreAudio> sounds = new ArrayList<>();
+            List<AudioContent> sounds = new ArrayList<>();
 
             String[] projection = new String[]{
                     MediaStore.Audio.Media._ID,
@@ -93,7 +92,7 @@ public class AudioLibraryViewModel extends AndroidViewModel {
                             id
                      );
 
-                     MediaStoreAudio audio = new MediaStoreAudio(id,contentUri,displayName,size,null ,dateModified);
+                     AudioContent audio = new AudioContent(id,contentUri,displayName,size,null ,dateModified);
                      sounds.add(audio);
                 }
                 cursor.close();
@@ -103,10 +102,10 @@ public class AudioLibraryViewModel extends AndroidViewModel {
 
     }
 
-    private static class LoadSoundsTask extends AsyncTask<Void, List<MediaStoreAudio>, List<MediaStoreAudio>> {
+    private static class LoadSoundsTask extends AsyncTask<Void, List<AudioContent>, List<AudioContent>> {
 
         private interface FinishedListener{
-            void onFinished(List<MediaStoreAudio> sounds);
+            void onFinished(List<AudioContent> sounds);
         }
 
         private AudioStore mAudioStore;
@@ -118,12 +117,12 @@ public class AudioLibraryViewModel extends AndroidViewModel {
         }
 
         @Override
-        protected List<MediaStoreAudio> doInBackground(Void... voids) {
+        protected List<AudioContent> doInBackground(Void... voids) {
             return mAudioStore.querySounds();
         }
 
         @Override
-        protected void onPostExecute(List<MediaStoreAudio> sounds) {
+        protected void onPostExecute(List<AudioContent> sounds) {
             mCallback.onFinished(sounds);
         }
     }
@@ -133,7 +132,7 @@ public class AudioLibraryViewModel extends AndroidViewModel {
         private changeListener mCallback;
 
         interface changeListener {
-            void onChange(boolean selfChange);
+            void onChange(boolean selfChange, Uri uri);
         }
 
         ObserverWrapper(Application application, Uri uri, changeListener callback ) {
@@ -145,7 +144,13 @@ public class AudioLibraryViewModel extends AndroidViewModel {
         @Override
         public void onChange(boolean selfChange) {
             super.onChange(selfChange);
-            mCallback.onChange(selfChange);
+
+        }
+
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            super.onChange(selfChange, uri);
+            mCallback.onChange(selfChange,uri);
         }
     }
 

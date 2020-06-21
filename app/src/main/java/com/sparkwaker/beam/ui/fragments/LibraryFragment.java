@@ -1,78 +1,72 @@
 package com.sparkwaker.beam.ui.fragments;
 
 import android.Manifest;
-import android.content.pm.PackageManager;
+import android.content.ContentUris;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
+import com.sparkwaker.beam.PermissionManager;
 import com.sparkwaker.beam.R;
-import com.sparkwaker.beam.models.MediaStoreAudio;
-import com.sparkwaker.beam.ui.adapters.AudioGalleryAdapter;
+import com.sparkwaker.beam.models.AudioContent;
+import com.sparkwaker.beam.ui.adapters.LibraryAdapter;
 import com.sparkwaker.beam.ui.viewmodels.AudioLibraryViewModel;
-import java.util.List;
-
-import static android.content.pm.PackageManager.PERMISSION_GRANTED;
+import static androidx.navigation.fragment.NavHostFragment.findNavController;
 
 public class LibraryFragment extends Fragment {
 
+    //region private methods
     private RecyclerView mRcSounds;
     private AudioLibraryViewModel mAudioLibraryViewModel;
-    private AudioGalleryAdapter mLibraryAdapter;
+    private LibraryAdapter mLibraryAdapter;
     private  static final int READ_EXTERNAL_STORAGE_REQUEST = 0x1045;
     private View mView;
+    private TextView mTxtSoundName;
+    private MaterialCardView mCardSoundPlaying;
+    private ProgressBar mPBarLoading;
+    private  MediaPlayer mPlayer;
+    //endregion
 
-    private boolean haveStoragePermission(){
-        return   ContextCompat.checkSelfPermission(requireActivity(), Manifest.permission.READ_EXTERNAL_STORAGE) == PERMISSION_GRANTED;
-    }
-
-    public void requestPermission() {
-        if (!haveStoragePermission()) {
-            String[] permissions = new String[] {
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE
-            };
-            ActivityCompat.requestPermissions(requireActivity(), permissions, READ_EXTERNAL_STORAGE_REQUEST);
+    //region global listeners
+    private PermissionManager.RequestPermissionListener  mRequestPermissionListener = new PermissionManager.RequestPermissionListener() {
+        @Override
+        public void onPermissionGranted() {
+            configUI();
         }
-    }
+
+        @Override
+        public void onPermissionNotGranted() {
+            Toast.makeText(requireActivity(), "Permiso 'WRITE_EXTERNAL_STORAGE' denegado", Toast.LENGTH_SHORT ).show();
+            findNavController(LibraryFragment.this).popBackStack();
+        }
+    };
+
+    private LibraryAdapter.SelectedAudioListener mSoundSelectedListener = soundSelected -> {
+        playSound(soundSelected);
+        updatePlayerBar(soundSelected);
+    };
+    //endregion
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        boolean showRationale;
-        switch (requestCode) {
-            case READ_EXTERNAL_STORAGE_REQUEST:
-
-                if (grantResults.length > 0 &&  grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                      configUI();
-                }  else {
-                    showRationale = ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(),
-                            Manifest.permission.READ_EXTERNAL_STORAGE);
-
-                    if(showRationale){
-                        Toast.makeText(requireActivity(),"Habilitar permisos" , Toast.LENGTH_LONG).show();
-                    }
-                }
-        }
-
-    }
-
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        mAudioLibraryViewModel = new ViewModelProvider(requireActivity()).get(AudioLibraryViewModel.class);
+        PermissionManager.onRequestPermissionsResult(requestCode, grantResults);
     }
 
     @Override
@@ -85,32 +79,96 @@ public class LibraryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mView = view;
 
-        if(haveStoragePermission()){
-            configUI();
-        }else {
-            requestPermission();
-        }
+        PermissionManager.requestPermission(this,new String[] {
+                Manifest.permission.READ_EXTERNAL_STORAGE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        }, READ_EXTERNAL_STORAGE_REQUEST, mRequestPermissionListener);
+
     }
 
     private void configUI(){
 
         mRcSounds = mView.findViewById(R.id.rcSounds);
+        mTxtSoundName = mView.findViewById(R.id.txtSoundName);
+        mPBarLoading = mView.findViewById(R.id.pBarLoading);
+        mCardSoundPlaying = mView.findViewById(R.id.cardSoundPlaying);
+        mCardSoundPlaying.setVisibility(View.GONE);
+        mAudioLibraryViewModel = new ViewModelProvider(this).get(AudioLibraryViewModel.class);
+        mPBarLoading.setVisibility(View.VISIBLE);
         mAudioLibraryViewModel.loadSounds();
-        mLibraryAdapter = new AudioGalleryAdapter(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(),((MediaStoreAudio)v.getTag()).getTitle(),Toast.LENGTH_LONG).show();
-            }
-        });
-        mAudioLibraryViewModel.getSounds().observe(getViewLifecycleOwner(), sounds -> {
-            Toast.makeText(getContext(),"Hay nuevos sonidos en la lista",Toast.LENGTH_LONG).show();
-            mLibraryAdapter.submitList(sounds);
-        });
-
+        mLibraryAdapter = new LibraryAdapter(mSoundSelectedListener);
         mRcSounds.setAdapter(mLibraryAdapter);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         mRcSounds.setLayoutManager(layoutManager);
-     //   mRcSounds.setHasFixedSize(true);
+        registerObservers();
+
+    }
+
+    private void registerObservers(){
+
+        mAudioLibraryViewModel.getSounds().observe(getViewLifecycleOwner(), sounds -> {
+            mLibraryAdapter.submitList(sounds);
+            mPBarLoading.setVisibility(View.GONE);
+        });
+    }
+
+    private void updatePlayerBar(AudioContent audioItem){
+         mTxtSoundName.setText(audioItem.getTitle());
+         if(mCardSoundPlaying.getVisibility() == View.GONE)
+             mCardSoundPlaying.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onDestroy() {
+        if(mPlayer != null){
+            if(mPlayer.isPlaying())
+                mPlayer.stop();
+
+            mPlayer.reset();
+            mPlayer.release();
+            mPlayer = null;
+        }
+        super.onDestroy();
+    }
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+
+    private void playSound(AudioContent currentSound){
+
+
+        try{
+
+           if(mPlayer !=null)
+               mPlayer.reset();
+
+            mPlayer = new MediaPlayer();
+            mPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+           /* mPlayer.setOnCompletionListener(SoundService.this);
+            mPlayer.setOnPreparedListener(SoundService.this);
+            mPlayer.setOnErrorListener(SoundService.this);
+            mPlayer.setOnInfoListener(SoundService.this);
+            mPlayer.setOnBufferingUpdateListener(SoundService.this);*/
+            //mPlayer.setWakeMode(requireActivity(), PowerManager.PARTIAL_WAKE_LOCK);
+
+            try{
+                long currentSoundId = currentSound.getId();
+                Uri trackUri = ContentUris.withAppendedId( MediaStore.Audio.Media.EXTERNAL_CONTENT_URI, currentSoundId);
+                //mSessionId = (mSessionId != -1)? mSessionId :mPlayer.getAudioSessionId();
+               // mPlayer.setAudioSessionId(mSessionId);
+                mPlayer.setDataSource(requireActivity(), trackUri);
+                mPlayer.prepare();
+                //Log.e("GETSESSIONID",mPlayer.getAudioSessionId() + "");
+
+                mPlayer.start();
+
+            }catch (Exception e){
+                e.printStackTrace();
+                Log.e("ERROR", e.getMessage() +"");
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
     }
 

@@ -7,7 +7,8 @@
     android:focusable="true"
     app:cardBackgroundColor="@color/colorDarkGray"
     app:cardCornerRadius="0dp"
-    app:cardElevation="25dp">
+    app:cardElevation="25dp"
+    android:id="@+id/cardSoundPlaying">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +22,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_expand"
+                    android:id="@+id/btnExpand"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
@@ -37,7 +38,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/text_sound_name"
+                        android:id="@+id/txtSoundName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/song_name_title"
@@ -47,7 +48,7 @@
                 </LinearLayout>
 
                 <Button
-                    android:id="@+id/btn_play_pause"
+                    android:id="@+id/btnPlayPause"
                     style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
