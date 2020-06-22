@@ -3,129 +3,62 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryDark"
+    android:padding="25dp">
 
     <TextView
         android:id="@+id/txt_sound_quality_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sound_quality_option"
-        android:textSize="24sp" />
+        android:textStyle="bold"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:padding="15dp"/>
 
-    <com.google.android.material.card.MaterialCardView
+    <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:background="@color/colorDarkGray"
-            android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/txt_hd_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hd_option"
+            android:paddingStart="5dp"
+            android:textSize="@dimen/text_size_regular"
+            android:buttonTint="@color/colorPurple"
+            android:checked="true"/>
 
-            <RadioButton
-                android:id="@+id/radBtnHd"
-                android:layout_width="wrap_content"
-                android:layout_height="65dp"
-                android:layout_weight="1"
-                android:buttonTint="@color/colorPurple"
-                android:checked="true"/>
+        <RadioButton
+            android:id="@+id/txt_high_quality_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPurple"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/highquality_option"
+            android:paddingStart="5dp"/>
 
-            <TextView
-                android:id="@+id/txt_hd_option"
-                android:layout_width="386dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="20dp"
-                android:layout_weight="1"
-                android:text="@string/hd_option" />
+        <RadioButton
+            android:id="@+id/txt_medium_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPurple"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/medium_option"
+            android:paddingStart="5dp"/>
 
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+        <RadioButton
+            android:id="@+id/txt_low_quality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPurple"
+            android:textSize="@dimen/text_size_regular"
+            android:text="@string/low_quality_option"
+            android:paddingStart="5dp"/>
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@color/colorDarkGray"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radBtnHigh"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:buttonTint="@color/colorPurple" />
-
-            <TextView
-                android:id="@+id/txt_high_quality_option"
-                android:layout_width="386dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:text="@string/highquality_option"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@color/colorDarkGray"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radBtnMed"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:buttonTint="@color/colorPurple" />
-
-            <TextView
-                android:id="@+id/txt_medium_quality"
-                android:layout_width="386dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:text="@string/medium_option"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:background="@color/colorDarkGray"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/radBtnLow"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:buttonTint="@color/colorPurple" />
-
-            <TextView
-                android:id="@+id/txt_low_quality"
-                android:layout_width="386dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="15dp"
-                android:layout_weight="1"
-                android:text="@string/low_quality_option"
-                android:textSize="14sp" />
-
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
+    </RadioGroup>
 
 </LinearLayout>

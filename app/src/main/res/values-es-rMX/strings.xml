@@ -38,7 +38,7 @@
     <string name="app_version_option">Versión de la app</string>
     <string name="clear_cache_option">Limpiar cache</string>
     <string name="rate_app_description">Dejanos saber cuanto te gusto nuestra app</string>
-    <string name="rate_our_app_button">Califica nuestra app ahora</string>
+    <string name="rate_our_app_button">Califica ahora</string>
     <string name="do_it_later_button">Hacerlo más tarde</string>
     <string name="song_name_title">Nombre de la melodía</string>
     <string name="play_song_option">Reproducir melodía</string>
@@ -47,4 +47,5 @@
     <string name="assing_contact_option">Asignar a un contacto</string>
     <string name="delete_song_option">Eliminar melodía</string>
     <string name="share_song_with_friends_option">Comparte la melodía con amigos</string>
+    <string name="Version" />
 </resources>

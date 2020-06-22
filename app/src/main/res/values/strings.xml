@@ -46,6 +46,7 @@
     <string name="assing_contact_option">Assign to a contact</string>
     <string name="delete_song_option">Delete song</string>
     <string name="share_song_with_friends_option">Share this song with friends</string>
+    <string name="Version" />
 
 
 </resources>

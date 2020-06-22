@@ -37,6 +37,7 @@
                     android:paddingTop="10dp">
 
                     <LinearLayout
+                        android:id="@+id/layoutRateApp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -74,6 +75,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutSharedApp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -101,16 +103,10 @@
                             android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
                             android:textColor="@color/colorWhite" />
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_keyboard_arrow_right"/>
-
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutUpdateApp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -148,6 +144,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutAppVersion"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -166,25 +163,39 @@
                             android:padding="10dp"
                             app:srcCompat="@drawable/ic_app_version_g" />
 
-                        <TextView
-                            android:id="@+id/txtAppVersion"
-                            android:layout_width="0dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="1"
-                            android:text="@string/app_version_option"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-                            android:textColor="@color/colorWhite" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:orientation="vertical">
 
-                        <ImageButton
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@android:color/transparent"
-                            android:tint="@color/colorWhite"
-                            app:srcCompat="@drawable/ic_keyboard_arrow_right"/>
+                            <TextView
+                                android:id="@+id/txtAppVersionTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="@string/app_version_option"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/colorWhite" />
+
+                            <TextView
+                                android:id="@+id/txtAppVersion"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="1.2.9"
+                                android:textSize="@dimen/text_size_xs"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                android:textColor="@color/colorWhite" />
+
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutClearCache"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -256,6 +267,7 @@
                     android:paddingTop="10dp">
 
                     <LinearLayout
+                        android:id="@+id/layoutSoundQuality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -291,6 +303,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutAudioFormat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"
@@ -328,6 +341,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/layoutExtractTime"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?attr/selectableItemBackground"

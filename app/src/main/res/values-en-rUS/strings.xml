@@ -48,4 +48,5 @@
     <string name="delete_song_option">Delete song</string>
     <string name="share_song_with_friends_option">Share this song with friends</string>
     <string name="hello_blank_fragment">hello_blank_fragment</string>
+    <string name="Version" />
 </resources>

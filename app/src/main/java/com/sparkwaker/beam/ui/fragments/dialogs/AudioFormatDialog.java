@@ -16,7 +16,7 @@ public class AudioFormatDialog extends DialogFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setStyle(DialogFragment.STYLE_NO_FRAME, android.R.style.Theme_Material_NoActionBar);
+
     }
 
     @Nullable
